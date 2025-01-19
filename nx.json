@@ -35,6 +35,23 @@
         "targetName": "test"
       },
       "exclude": ["apps/clickbob-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/rollup/plugin",
+      "options": {
+        "buildTargetName": "build"
+      }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "typecheck"
+      }
     }
   ]
 }
