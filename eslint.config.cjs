@@ -36,17 +36,5 @@ module.exports = [
     ],
     // Override or add rules here
     rules: {},
-  },
-  {
-    "files": ["*.json"],
-    "parser": "jsonc-eslint-parser",
-    "rules": {
-      "@nx/dependency-checks": [
-        "error",
-        {
-          "ignoredFiles": ["packages/types/rollup.config.js"]
-        }
-      ]
-    }
-  },
+  }
 ];

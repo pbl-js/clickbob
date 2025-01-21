@@ -21,14 +21,14 @@ export type ComponentContentModel = {
 
 export type PageContent = {
   name: string;
-  fields: any[];
+  fields: unknown[];
   components: ComponentContent[];
 };
 
 export type PageContentModel = {
   _id: ObjectId;
   name: string;
-  fields: any[];
+  fields: unknown[];
   components: ComponentContentModel[];
 };
 
@@ -43,11 +43,11 @@ export type PageContentDetails_Response = PageContentRequest;
 
 export type SectionContent = {
   name: string;
-  fields: any[];
+  fields: unknown[];
   components: ComponentContent[];
 };
 
 export type DataContent = {
   name: string;
-  fields: any[];
+  fields: unknown[];
 };
