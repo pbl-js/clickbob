@@ -37,7 +37,7 @@
       "options": {
         "targetName": "test"
       },
-      "exclude": ["apps/clickbob-e2e/**/*"]
+      "exclude": ["apps/clickbob-e2e/**/*", "apps/express-e2e/**/*"]
     },
     {
       "plugin": "@nx/rollup/plugin",
@@ -70,6 +70,14 @@
       "options": {
         "targetName": "e2e"
       }
+    },
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview"
+      }
     }
   ],
   "generators": {
@@ -77,6 +85,11 @@
       "application": {
         "style": "tailwind",
         "linter": "eslint"
+      }
+    },
+    "@nx/react": {
+      "library": {
+        "unitTestRunner": "vitest"
       }
     }
   }

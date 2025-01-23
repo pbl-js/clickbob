@@ -1,6 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "strict": true,
+    "strictNullChecks": true,
     "rootDir": ".",
     "sourceMap": true,
     "declaration": false,
@@ -15,7 +17,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@clickbob/types": ["packages/types/src/index.ts"]
+      "@types": ["packages/types/src/index.ts"],
+      "@ui/*": ["packages/ui/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
