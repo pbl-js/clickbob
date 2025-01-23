@@ -19,8 +19,9 @@ import { DraggingOverlay } from '../../../components/DraggingOverlay/DraggingOve
 export const dynamic = 'force-dynamic';
 
 export default async function Home({
-  params: { contentId },
+  params,
 }: PageProps<{ contentId?: string }>) {
+  const { contentId } = await params;
   if (!contentId) redirect(CONTENT_PAGE);
 
   const details = await getPageContentDetails(contentId);
