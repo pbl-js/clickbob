@@ -3,7 +3,10 @@ import { RegisteredComponentListing } from '../../../components/RegisteredCompon
 import { IframeComunicator } from '../../../components/iframeCommunicator/IframeCommunicator';
 import { PAGE_CONTENT } from '../../../utils/api/tags';
 import { PageProps } from '../../../utils/types/types';
-import { getPageContentDetails, getRegisteredComponents } from '../../../utils/api/fetchers';
+import {
+  getPageContentDetails,
+  getRegisteredComponents,
+} from '../../../utils/api/fetchers';
 import { redirect } from 'next/navigation';
 import { CONTENT_PAGE } from '../../../utils/routes';
 import { RectLayer } from '../../../components/RectLayer/RectLayer';
@@ -15,7 +18,9 @@ import { DraggingOverlay } from '../../../components/DraggingOverlay/DraggingOve
 
 export const dynamic = 'force-dynamic';
 
-export default async function Home({ params: { contentId } }: PageProps<{ contentId?: string }>) {
+export default async function Home({
+  params: { contentId },
+}: PageProps<{ contentId?: string }>) {
   if (!contentId) redirect(CONTENT_PAGE);
 
   const details = await getPageContentDetails(contentId);
@@ -50,9 +55,15 @@ export default async function Home({ params: { contentId } }: PageProps<{ conten
 
                 <div className="mt-2 flex flex-col gap-1">
                   {details.components.map((component) => (
-                    <div className="p-2 bg-primary rounded-md flex justify-between" key={component._id}>
+                    <div
+                      className="p-2 bg-primary rounded-md flex justify-between"
+                      key={component._id}
+                    >
                       {component.name}
-                      <DeleteLayerButton componentId={component._id} pageContentId={details._id} />
+                      <DeleteLayerButton
+                        componentId={component._id}
+                        pageContentId={details._id}
+                      />
                     </div>
                   ))}
                 </div>
@@ -70,7 +81,10 @@ export default async function Home({ params: { contentId } }: PageProps<{ conten
               </div>
 
               <div className="flex relative h-full overflow-y-auto">
-                <RectLayer pageContent={details} registeredComponents={registeredComponents} />
+                <RectLayer
+                  pageContent={details}
+                  registeredComponents={registeredComponents}
+                />
                 <iframe
                   className="block w-full border-none"
                   src="http://localhost:4444"
@@ -90,7 +104,10 @@ export default async function Home({ params: { contentId } }: PageProps<{ conten
                 {'<'}
               </Link>
             </div>
-            <RightPanel details={details} componentsSchema={registeredComponents} />
+            <RightPanel
+              details={details}
+              componentsSchema={registeredComponents}
+            />
           </div>
         </div>
       </main>
