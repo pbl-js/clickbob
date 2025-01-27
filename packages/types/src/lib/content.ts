@@ -21,6 +21,7 @@ export type ComponentContentModel = {
 
 export type PageContent = {
   name: string;
+  status: 'draft' | 'published';
   fields: unknown[];
   components: ComponentContent[];
 };
@@ -28,6 +29,7 @@ export type PageContent = {
 export type PageContentModel = {
   _id: ObjectId;
   name: string;
+  status: 'draft' | 'published';
   fields: unknown[];
   components: ComponentContentModel[];
 };
